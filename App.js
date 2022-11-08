@@ -13,11 +13,12 @@ export default function App() {
   const handleBarCodeScanned = ({ type, data }) => {
     const barcode = "http://localhost:3000"
 
-    if (data !== barcode) {
+    if (data === barcode) {
       setBarcode("true")
     } else {
       setBarcode("false")
     }
+
     setScanned(true)
     setModalVisible(true)
   }
