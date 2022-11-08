@@ -1,3 +1,9 @@
+## Docs
+
+### Ticketing diagram flow
+https://drive.google.com/file/d/1WOxy2bz1uyqJyTQZruFa65jWqwQI1XnA/view?usp=sharing
+
+
 ## 💡 Bug and solutions
 
 ### Solution for Invariant Violation: ViewPropTypes has been removed from React Native. Migrate to ViewPropTypes exported from 'deprecated-react-native-prop-types'.
