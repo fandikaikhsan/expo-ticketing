@@ -14,9 +14,8 @@ const decrypt = (token) => {
   return jwt.verify(token, process.env.JWT_SECRET)
 }
 
-const barcodeParser = (barcode) => {
-  //
-
+const decryptTicket = (encryptTicket, signatureKey) => {
+  const ticketData = jwt.verify(token, signatureKey)
   return `Your barcode is ${barcode}`
 }
 
