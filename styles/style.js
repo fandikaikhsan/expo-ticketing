@@ -46,6 +46,16 @@ export default styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
+  textGreenStyle: {
+    color: "green",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  textRedStyle: {
+    color: "green",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
   modalText: {
     marginBottom: 15,
     textAlign: "center",

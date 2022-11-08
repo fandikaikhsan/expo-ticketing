@@ -7,16 +7,20 @@ export default function App() {
   const [modalVisible, setModalVisible] = useState(false)
   const [scanned, setScanned] = useState(false)
   const [barcode, setBarcode] = useState("")
+  const [hasPermission, setHasPermission] = useState(false)
 
   console.log("barcode", barcode)
+  console.log("hasPermission", hasPermission)
 
   const handleBarCodeScanned = ({ type, data }) => {
     const barcode = "http://localhost:3000"
 
     if (data === barcode) {
       setBarcode("true")
+      setHasPermission(true)
     } else {
       setBarcode("false")
+      setHasPermission(false)
     }
 
     setScanned(true)
@@ -25,7 +29,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Homepage</Text>
+      <Text style={styles.text}>Hello, Fandika</Text>
+      <Text style={styles.text}>Please scan to check in gate 1</Text>
       {/* button to open modal */}
       <Button
         title="Open Modal"
@@ -68,16 +73,24 @@ export default function App() {
               />
             )}
 
-            <Text>{barcode}</Text>
-
             {/* button to close modal */}
-            <Button
-              title="Close Modal"
-              onPress={() => {
-                setModalVisible(!modalVisible)
-              }}
-            />
           </View>
+          {/* text with green background color */}
+          {scanned && (
+            <Text
+              style={
+                hasPermission ? styles.textGreenStyle : styles.textRedStyle
+              }
+            >
+              {barcode}
+            </Text>
+          )}
+          <Button
+            title="Close Modal"
+            onPress={() => {
+              setModalVisible(!modalVisible)
+            }}
+          />
         </View>
       </Modal>
     </View>
